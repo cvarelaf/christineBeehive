@@ -48,19 +48,17 @@ function init() {
 
 					var geo = new Geo(addressData.geo.lat, addressData.geo.lng);
 
-					var address = new address(addressData.city,new Geo(addressData.geo.lat, addressData.geo.lng), addressData.street, addressData.suite, addressData.zipcode);
+					var address = new Address(addressData.city,new Geo(addressData.geo.lat, addressData.geo.lng), addressData.street, addressData.suite, addressData.zipcode);
 
 					console.log(data[key]);
 
-					var bee = new Bee(beeData.id, beeData.name, beeData.username, beeData.email, new address(addressData.city, new Geo (addressData.geo.lat,addressData.geo.lng), addressData.street, addressData.suite, addressData.zipcode)); 
-					
-					//TAREA address, component
+					var bee = new Bee(beeData.id, beeData.name, beeData.username, beeData.email, new Address(addressData.city, new Geo (addressData.geo.lat,addressData.geo.lng), addressData.street, addressData.suite, addressData.zipcode)); 
 
 					bees.push(bee);
 
-					var beeName = document.createElement('p');
-					beeName.innerHTML = bee.name;
-					beesComponent.appendChild(document.createElement);
+					// var beeName = document.createElement('p');
+					// beeName.innerHTML = bee.name;
+					// beesComponent.appendChild(document.createElement);
 				}
 
 				console.log(bees);
