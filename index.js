@@ -9,11 +9,11 @@ window.addEventListener('load', init, false);
 
 function init() {
 	//Declare variables
-	var bees;
-	var beesComponent = document.getElementById('beesComponent');
+	var dataManager = new DataManager();
+	var navManager = new NavManager();
 
 	//Initialize variables
-	bees = [];
+
 	//Program Logic
 	requestUsersData();
 	//'https://jsonplaceholder.typicode.com/posts'
@@ -54,14 +54,14 @@ function init() {
 
 					var bee = new Bee(beeData.id, beeData.name, beeData.username, beeData.email, new Address(addressData.city, new Geo (addressData.geo.lat,addressData.geo.lng), addressData.street, addressData.suite, addressData.zipcode)); 
 
-					bees.push(bee);
+					dataManager.bees.push(bee);
 
 					// var beeName = document.createElement('p');
 					// beeName.innerHTML = bee.name;
 					// beesComponent.appendChild(document.createElement);
 				}
 
-				console.log(bees);
+				console.log(bee);
 			}
 			else {
 				console.log('Server Error');
