@@ -10,9 +10,7 @@ window.addEventListener('load', init, false);
 function init() {
 	//Declare variables
 	var dataManager = new DataManager();
-	var navManager = new NavManager();
-
-	//Initialize variables
+	var navManager = new NavManager(dataManager);
 
 	//Program Logic
 	requestUsersData();

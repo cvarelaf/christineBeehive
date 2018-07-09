@@ -1,6 +1,7 @@
 class DataManager{
 
     constructor(){
+        
         this.bees = [];
         this.currentBee = null;
 
