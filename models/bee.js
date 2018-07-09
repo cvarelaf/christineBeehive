@@ -15,5 +15,10 @@ class Bee {
 		this.address = address;
 		this.posts = [];
 		this.album = null;
+		this.todos = [];
+	}
+
+	comer(){
+		
 	}
 }

@@ -39,29 +39,19 @@ function init() {
 				var data = JSON.parse(request.responseText);
 				// console.log(data);
 				for (var key in data) {
-
 					var beeData = data[key];
 					var addressData = data[key].address;
-					var geoData = data[key].geo;
-
-					console.log(addressData);
 
 					var geo = new Geo(addressData.geo.lat, addressData.geo.lng);
 
-					var address = new Address(addressData.city,new Geo(addressData.geo.lat, addressData.geo.lng), addressData.street, addressData.suite, addressData.zipcode);
+					var address = new Address(addressData.city, geo, addressData.street, addressData.suite, addressData.zipcode);
 
-					console.log(data[key]);
-
-					var bee = new Bee(beeData.id, beeData.name, beeData.username, beeData.email, new Address(addressData.city, new Geo (addressData.geo.lat,addressData.geo.lng), addressData.street, addressData.suite, addressData.zipcode)); 
+					var bee = new Bee(beeData.id, beeData.name, beeData.username, beeData.email, beeData.phone, new Address(addressData.city, new Geo (addressData.geo.lat,addressData.geo.lng), addressData.street, addressData.suite, addressData.zipcode));
 
 					dataManager.bees.push(bee);
-
-					// var beeName = document.createElement('p');
-					// beeName.innerHTML = bee.name;
-					// beesComponent.appendChild(document.createElement);
 				}
 
-				console.log(bee);
+				navManager.showBees();
 			}
 			else {
 				console.log('Server Error');
