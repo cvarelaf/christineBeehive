@@ -11,6 +11,6 @@ class DataManager{
 
     setCurrentBee(bee){
         this.currentBee = bee;
-        console.log(this.currentBee);
+        console.log('Test'+ this.currentBee);
     }
 }

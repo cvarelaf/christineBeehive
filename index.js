@@ -49,6 +49,7 @@ function init() {
 					var bee = new Bee(beeData.id, beeData.name, beeData.username, beeData.email, beeData.phone, new Address(addressData.city, new Geo (addressData.geo.lat,addressData.geo.lng), addressData.street, addressData.suite, addressData.zipcode));
 
 					dataManager.bees.push(bee);
+					console.log(bee);
 				}
 
 				navManager.showBees();
