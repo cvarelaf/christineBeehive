@@ -5,7 +5,7 @@ class BeeComponent extends Component{
         this.container.className = 'beeComponent';
 
         //Create Elements
-        this.title = document.createElement('h1');
+        this.name = document.createElement('h1');
         this.username = document.createElement('p');
         this.email = document.createElement('p');
         this.phone = document.createElement('p');
@@ -18,7 +18,7 @@ class BeeComponent extends Component{
         this.todosBtn = document.createElement('button');
 
         //Add Elements
-        this.container.appendChild(this.title);
+        this.container.appendChild(this.name);
         this.container.appendChild(this.username);
         this.container.appendChild(this.email);
         this.container.appendChild(this.phone);
@@ -31,14 +31,14 @@ class BeeComponent extends Component{
         this.container.appendChild(this.todosBtn);
 
         //Fill Element
-        this.title.innerHTML = this.model.name;
+        this.name.innerHTML = this.model.name;
         this.username.innerHTML = this.model.username;
         this.email.innerHTML = this.model.email;
         this.phone.innerHTML = this.model.phone;
-        this.city.innerHTML = this.model.city;
-        this.posts.innerHTML = 'Posts: ' + this.model.posts.lenght;
+        this.city.innerHTML = this.model.address.city;
+        this.posts.innerHTML = 'Posts: 0'; //this.model.posts.lenght;
         this.photos.innerHTML = 'Photos: 0'; //this.model.photos.length;
-        this.todos.innerHTML = 'Todos: ' + this.model.todos.lenght;
+        this.todos.innerHTML = 'Todos: 0'; //this.model.todos.lenght;
         this.postsBtn.innerHTML = 'POSTS';
         this.albumBtn.innerHTML = 'ALBUM';
         this.todosBtn.innerHTML = 'TODOS';

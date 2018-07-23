@@ -14,6 +14,7 @@ function init() {
 
 	//Program Logic
 	requestUsersData();
+	requestPostsData();
 	//'https://jsonplaceholder.typicode.com/posts'
 	//'https://jsonplaceholder.typicode.com/comments'
 	//'https://jsonplaceholder.typicode.com/photos'
@@ -24,6 +25,13 @@ function init() {
 		var request = new XMLHttpRequest();
 		request.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
 		request.onreadystatechange = requestUsersDataCompleted;
+		request.send();
+	}
+
+	function requestPostsData() {
+		var request = new XMLHttpRequest();
+		request.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
+		request.onreadystatechange = requestPostsDataCompleted;
 		request.send();
 	}
 
@@ -51,6 +59,29 @@ function init() {
 				}
 
 				navManager.showBees();
+			}
+			else {
+				console.log('Server Error');
+			}
+		}
+	}
+
+	function requestPostsDataCompleted(e) {
+		var request = e.target;
+		// console.log(JSON.parse(request.responseText));
+		if (request.readyState === XMLHttpRequest.DONE) {
+			if (request.status === 200) {
+				// console.log(request.responseText);
+				var data = JSON.parse(request.responseText);
+				// console.log(data);
+				for (var key in data) {
+					var postData = data[key];
+					var post = new Post(postData.userId, postData.id, postData.title, postData.body);
+					dataManager.posts.push(post);
+					//console.log(post);
+				}
+
+				navManager.showBeePosts();
 			}
 			else {
 				console.log('Server Error');
