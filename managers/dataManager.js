@@ -10,7 +10,6 @@ class DataManager {
 
     setCurrentBee(bee) {
         this.currentBee = bee;
-        console.log('Test' + this.currentBee);
     }
 
     addPostToBee(post) {
@@ -20,7 +19,6 @@ class DataManager {
                 bee.posts.push(post);
                 return;
             }
-            console.log(bee);
         });
     }
 

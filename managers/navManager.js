@@ -10,6 +10,7 @@ class NavManager {
     showBees() {
         this.dataManager.bees.forEach(bee => {
             var beeComponent = new BeeComponent(bee, this.beesComponent, this.dataManager);
+            console.log(bee);
         });
     }
 
