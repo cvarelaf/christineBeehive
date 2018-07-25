@@ -19,11 +19,6 @@ class NavManager {
         });
     }
 
-    // showComments() {
-    // this.dataManager.comments.forEach(comment => {
-    // var commentsComponent = new commentsComponent(comment, this.commentsComponent, this.dataManager);
-    // })
-    // }
 
     showBeeAlbum() {
 
