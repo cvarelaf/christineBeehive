@@ -15,6 +15,7 @@ function init() {
 	//Program Logic
 	requestUsersData();
 	requestPostsData();
+	requestCommentsData();
 	//'https://jsonplaceholder.typicode.com/posts'
 	//'https://jsonplaceholder.typicode.com/comments'
 	//'https://jsonplaceholder.typicode.com/photos'
@@ -32,6 +33,13 @@ function init() {
 		var request = new XMLHttpRequest();
 		request.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
 		request.onreadystatechange = requestPostsDataCompleted;
+		request.send();
+	}
+
+	function requestCommentsData() {
+		var request = new XMLHttpRequest();
+		request.open('GET', 'https://jsonplaceholder.typicode.com/comments', true);
+		request.onreadystatechange = requestCommentsDataCompleted;
 		request.send();
 	}
 
@@ -77,11 +85,32 @@ function init() {
 				for (var key in data) {
 					var postData = data[key];
 					var post = new Post(postData.userId, postData.id, postData.title, postData.body);
-					dataManager.posts.push(post);
-					//console.log(post);
+					dataManager.addPostToBee(post);
 				}
 
-				navManager.showBeePosts();
+				navManager.showPosts();
+			}
+			else {
+				console.log('Server Error');
+			}
+		}
+	}
+
+	function requestCommentsDataCompleted(e) {
+		var request = e.target;
+		// console.log(JSON.parse(request.responseText));
+		if (request.readyState === XMLHttpRequest.DONE) {
+			if (request.status === 200) {
+				// console.log(request.responseText);
+				var data = JSON.parse(request.responseText);
+				// console.log(data);
+				for (var key in data) {
+					var commentData = data[key];
+					var comment = new Comment(commentData.postId, commentData.id, commentData.name, commentData.email, commentData.body);
+					dataManager.addCommentToPost(comment);
+				}
+
+				navManager.showComments();
 			}
 			else {
 				console.log('Server Error');

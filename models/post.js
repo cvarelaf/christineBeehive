@@ -1,5 +1,5 @@
 /**
-* @name Posts
+* @name Post
 * @extends
 * @file album.js
 * @author Esteban Padilla <ep@estebanpadilla.com>
@@ -11,6 +11,7 @@ class Post {
 		this.id = id;
 		this.title = title;
 		this.body = body;
+		this.comments = [];
     }
     
 }
