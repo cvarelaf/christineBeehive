@@ -14,8 +14,8 @@ function init() {
 
 	//Program Logic
 	requestUsersData();
-	requestPostsData();
-	requestCommentsData();
+
+	// requestCommentsData();
 	//'https://jsonplaceholder.typicode.com/posts'
 	//'https://jsonplaceholder.typicode.com/comments'
 	//'https://jsonplaceholder.typicode.com/photos'
@@ -60,13 +60,14 @@ function init() {
 
 					var address = new Address(addressData.city, geo, addressData.street, addressData.suite, addressData.zipcode);
 
-					var bee = new Bee(beeData.id, beeData.name, beeData.username, beeData.email, beeData.phone, new Address(addressData.city, new Geo (addressData.geo.lat,addressData.geo.lng), addressData.street, addressData.suite, addressData.zipcode));
+					var bee = new Bee(beeData.id, beeData.name, beeData.username, beeData.email, beeData.phone, new Address(addressData.city, new Geo(addressData.geo.lat, addressData.geo.lng), addressData.street, addressData.suite, addressData.zipcode));
 
 					dataManager.bees.push(bee);
-					console.log(bee);
+					//console.log(bee);
 				}
 
 				navManager.showBees();
+				requestPostsData();
 			}
 			else {
 				console.log('Server Error');
@@ -88,7 +89,7 @@ function init() {
 					dataManager.addPostToBee(post);
 				}
 
-				navManager.showPosts();
+				requestCommentsData();
 			}
 			else {
 				console.log('Server Error');
@@ -110,7 +111,10 @@ function init() {
 					dataManager.addCommentToPost(comment);
 				}
 
-				navManager.showComments();
+				//HACK
+				dataManager.currentBee = dataManager.bees[7];
+				navManager.showPosts();
+				//navManager.showComments();
 			}
 			else {
 				console.log('Server Error');

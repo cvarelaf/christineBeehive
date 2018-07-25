@@ -1,8 +1,8 @@
-class PostsComponent extends Component{
+class PostComponent extends Component {
 
-    constructor(model,parent, dataManager){
+    constructor(model, parent, dataManager) {
         super(model, parent, dataManager);
-        this.container.className = 'postsComponent';
+        this.container.className = 'postComponent';
 
         //Create Elements
         this.userId = document.createElement('h1');
@@ -19,6 +19,13 @@ class PostsComponent extends Component{
         this.title.innerHTML = this.model.title;
         this.body.innerHTML = this.model.body;
 
-        this.container.post = this.model;
+        // this.container.post = this.model;
+        this.addComments();
+    }
+
+    addComments() {
+        this.model.comments.forEach(function (comment) {
+            var commentComponent = new CommentComponent(comment, this.container, this.dataManager);
+        });
     }
 }

@@ -1,8 +1,8 @@
-class CommentsComponent extends Component{
+class CommentComponent extends Component {
 
-    constructor(model,parent, dataManager){
+    constructor(model, parent, dataManager) {
         super(model, parent, dataManager);
-        this.container.className = 'postsComponent';
+        this.container.className = 'commentComponent';
 
         //Create Elements
         this.postId = document.createElement('h1');
@@ -24,7 +24,7 @@ class CommentsComponent extends Component{
         this.name.innerHTML = this.model.name;
         this.email.innerHTML = this.model.email;
         this.body.innerHTML = this.model.body;
-        
-        this.container.post = this.model;
+
+        //this.container.post = this.model;
     }
 }
