@@ -1,6 +1,6 @@
-class BeeComponent extends Component{
+class BeeComponent extends Component {
 
-    constructor(model,parent, dataManager){
+    constructor(model, parent, dataManager) {
         super(model, parent, dataManager);
         this.container.className = 'beeComponent';
 
@@ -36,7 +36,7 @@ class BeeComponent extends Component{
         this.email.innerHTML = this.model.email;
         this.phone.innerHTML = this.model.phone;
         this.city.innerHTML = this.model.address.city;
-        this.posts.innerHTML = 'Posts: 0'; //this.model.posts.lenght;
+        this.posts.innerHTML = 'Posts:' + this.model.posts.length;
         this.photos.innerHTML = 'Photos: 0'; //this.model.photos.length;
         this.todos.innerHTML = 'Todos: 0'; //this.model.todos.lenght;
         this.postsBtn.innerHTML = 'POSTS';
@@ -44,11 +44,11 @@ class BeeComponent extends Component{
         this.todosBtn.innerHTML = 'TODOS';
 
         this.postsBtn.onclick = this.postsBtnClick.bind(this);
-        
+
         this.container.bee = this.model;
     }
 
-    postsBtnClick(e){
+    postsBtnClick(e) {
         this.dataManager.setCurrentBee(this.model);
     }
 }

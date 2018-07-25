@@ -65,8 +65,6 @@ function init() {
 					dataManager.bees.push(bee);
 					//console.log(bee);
 				}
-
-				navManager.showBees();
 				requestPostsData();
 			}
 			else {
@@ -113,6 +111,7 @@ function init() {
 
 				//HACK
 				dataManager.currentBee = dataManager.bees[7];
+				navManager.showBees();
 				navManager.showPosts();
 			}
 			else {
