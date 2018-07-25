@@ -2,6 +2,7 @@ class PostComponent extends Component {
 
     constructor(model, parent, dataManager) {
         super(model, parent, dataManager);
+
         this.container.className = 'postComponent';
 
         //Create Elements
@@ -19,13 +20,13 @@ class PostComponent extends Component {
         this.title.innerHTML = this.model.title;
         this.body.innerHTML = this.model.body;
 
-        // this.container.post = this.model;
         this.addComments();
+
     }
 
     addComments() {
-        this.model.comments.forEach(function (comment) {
-            var commentComponent = new CommentComponent(comment, this.container, this.dataManager);
-        });
+        for (let i = 0; i < this.model.comments.length; i++) {
+            var commentComponent = new CommentComponent(this.model.comments[i], this.container, this.dataManager);
+        }
     }
 }

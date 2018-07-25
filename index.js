@@ -114,7 +114,6 @@ function init() {
 				//HACK
 				dataManager.currentBee = dataManager.bees[7];
 				navManager.showPosts();
-				//navManager.showComments();
 			}
 			else {
 				console.log('Server Error');

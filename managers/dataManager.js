@@ -7,8 +7,8 @@ class DataManager {
         this.comments = [];
         this.currentBee = null;
         this.user = new Bee(100, 'Christine Romero', 'epadilla', 'ep@estebanpadilla.com', '506 87066660', new Address('Cartago', new Geo(0.0, 0.0), 'Calle Quizarraces', '1000', '1000/1000'));
-        this.post = new Post(100, 100, 'Title Test', 'Body Test');
-        this.comment = new Comment(100, 100, 'Test', 'Test', 'Test');
+        // this.post = new Post(100, 100, 'Title Test', 'Body Test');
+        // this.comment = new Comment(100, 100, 'Test', 'Test', 'Test');
 
         this.bees.push(this.user);
         // this.posts.push(this.post);
@@ -27,7 +27,7 @@ class DataManager {
                 bee.posts.push(post);
                 return;
             }
-            console.log(bee);
+            //console.log(bee);
         });
     }
 
