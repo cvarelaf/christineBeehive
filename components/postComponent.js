@@ -6,7 +6,7 @@ class PostComponent extends Component {
         this.container.className = 'postComponent';
 
         //Create Elements
-        this.userId = document.createElement('h1');
+        this.userId = document.createElement('h3');
         this.title = document.createElement('p');
         this.body = document.createElement('p');
 
@@ -16,9 +16,9 @@ class PostComponent extends Component {
         this.container.appendChild(this.body);
 
         //Fill Element
-        this.userId.innerHTML = this.model.userId;
-        this.title.innerHTML = this.model.title;
-        this.body.innerHTML = this.model.body;
+        this.userId.innerHTML = 'UserId: ' + this.model.userId;
+        this.title.innerHTML = 'Title: ' + this.model.title;
+        this.body.innerHTML = 'Body: ' + this.model.body;
 
         this.addComments();
 

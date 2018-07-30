@@ -44,11 +44,16 @@ class BeeComponent extends Component {
         this.todosBtn.innerHTML = 'TODOS';
 
         this.postsBtn.onclick = this.postsBtnClick.bind(this);
+        this.albumBtn.onclick = this.albumBtnClick.bind(this);
 
         this.container.bee = this.model;
     }
 
     postsBtnClick(e) {
+        this.dataManager.setCurrentBee(this.model);
+    }
+
+    albumBtnClick(e) {
         this.dataManager.setCurrentBee(this.model);
     }
 }

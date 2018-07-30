@@ -5,7 +5,7 @@ class CommentComponent extends Component {
         this.container.className = 'commentComponent';
 
         //Create Elements
-        this.postId = document.createElement('h1');
+        this.postId = document.createElement('p');
         this.id = document.createElement('p');
         this.name = document.createElement('p');
         this.email = document.createElement('p');
@@ -19,11 +19,11 @@ class CommentComponent extends Component {
         this.container.appendChild(this.body);
 
         //Fill Element
-        this.postId.innerHTML = this.model.postId;
-        this.id.innerHTML = this.model.id;
-        this.name.innerHTML = this.model.name;
-        this.email.innerHTML = this.model.email;
-        this.body.innerHTML = this.model.body;
+        this.postId.innerHTML =  'PostId: ' + this.model.postId;
+        this.id.innerHTML =  'UserId: ' + this.model.id;
+        this.name.innerHTML =  'Name: ' + this.model.name;
+        this.email.innerHTML =  'Email: ' + this.model.email;
+        this.body.innerHTML =  'Body: ' + this.model.body;
 
         //this.container.post = this.model;
     }

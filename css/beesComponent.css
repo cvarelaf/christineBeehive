@@ -1,0 +1,16 @@
+.beesComponent {
+	background-color: rgb(0, 0, 0);
+    margin-right: 5px;
+    width: auto;
+	height: auto;
+	padding: 10px;
+}
+
+.beeComponent {
+	background-color: rgb(66, 190, 66);
+    width: auto;
+	height: auto;
+    padding: 30px;
+    margin-bottom: 30px;
+	border-radius: 10px;
+}

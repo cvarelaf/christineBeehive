@@ -124,10 +124,10 @@ function init() {
 					dataManager.addCommentToPost(comment);
 				}
 
-				//HACK
-				dataManager.currentBee = dataManager.bees[7];
-				navManager.showBees();
-				navManager.showPosts();
+				// HACK
+				//dataManager.currentBee = dataManager.bees[0];
+				//navManager.showBees();
+				//navManager.showPosts();
 			}
 			else {
 				console.log('Server Error');
@@ -172,8 +172,7 @@ function init() {
 				}
 
 				//HACK
-				dataManager.currentBee = dataManager.bees[7];
-				navManager.showBees();
+				dataManager.currentBee = dataManager.bees[0];
 				navManager.showBeeAlbum();
 			}
 			else {
