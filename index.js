@@ -80,6 +80,7 @@ function init() {
 					//console.log(bee);
 				}
 				requestPostsData();
+				requestAlbumsData();
 			}
 			else {
 				console.log('Server Error');
@@ -173,7 +174,6 @@ function init() {
 				//HACK
 				dataManager.currentBee = dataManager.bees[7];
 				navManager.showBees();
-				navManager.showPosts();
 				navManager.showBeeAlbum();
 			}
 			else {

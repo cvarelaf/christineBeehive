@@ -47,9 +47,9 @@ class DataManager {
 
     addPhotoToAlbum(photo) {
         this.bees.forEach(function (bee) {
-            bee.album.forEach(function (album) {
+            bee.albums.forEach(function (album) {
                 if (album.id == photo.albumId) {
-                    post.photos.push(photo);
+                    album.photos.push(photo);
                     return;
                 }
             });

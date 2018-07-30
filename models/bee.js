@@ -15,7 +15,7 @@ class Bee {
 		this.phone = phone;
 		this.address = address;
 		this.posts = [];
-		this.album = [];
+		this.albums = [];
 		this.todos = [];
 	}
 
