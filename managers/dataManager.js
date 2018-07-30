@@ -5,6 +5,8 @@ class DataManager {
         this.bees = [];
         this.posts = [];
         this.comments = [];
+        this.albums = [];
+        this.photos = [];
         this.currentBee = null;
     }
 
@@ -27,6 +29,27 @@ class DataManager {
             bee.posts.forEach(function (post) {
                 if (post.id == comment.postId) {
                     post.comments.push(comment);
+                    return;
+                }
+            });
+        });
+    }
+
+    addAlbumToBee(album) {
+        this.bees.forEach(function (bee) {
+            //function recibiendoBee(bee)
+            if (bee.id == album.userId) {
+                bee.albums.push(album);
+                return;
+            }
+        });
+    }
+
+    addPhotoToAlbum(photo) {
+        this.bees.forEach(function (bee) {
+            bee.album.forEach(function (album) {
+                if (album.id == photo.albumId) {
+                    post.photos.push(photo);
                     return;
                 }
             });

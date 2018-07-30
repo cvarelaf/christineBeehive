@@ -18,8 +18,8 @@ function init() {
 	// requestCommentsData();
 	//'https://jsonplaceholder.typicode.com/posts'
 	//'https://jsonplaceholder.typicode.com/comments'
-	//'https://jsonplaceholder.typicode.com/photos'
 	//'https://jsonplaceholder.typicode.com/albums'
+	//'https://jsonplaceholder.typicode.com/photos'
 	//'https://jsonplaceholder.typicode.com/todos'
 
 	function requestUsersData() {
@@ -40,6 +40,20 @@ function init() {
 		var request = new XMLHttpRequest();
 		request.open('GET', 'https://jsonplaceholder.typicode.com/comments', true);
 		request.onreadystatechange = requestCommentsDataCompleted;
+		request.send();
+	}
+
+	function requestAlbumsData() {
+		var request = new XMLHttpRequest();
+		request.open('GET', 'https://jsonplaceholder.typicode.com/albums', true);
+		request.onreadystatechange = requestAlbumsDataCompleted;
+		request.send();
+	}
+
+	function requestPhotosData() {
+		var request = new XMLHttpRequest();
+		request.open('GET', 'https://jsonplaceholder.typicode.com/photos', true);
+		request.onreadystatechange = requestPhotosDataCompleted;
 		request.send();
 	}
 
@@ -113,6 +127,54 @@ function init() {
 				dataManager.currentBee = dataManager.bees[7];
 				navManager.showBees();
 				navManager.showPosts();
+			}
+			else {
+				console.log('Server Error');
+			}
+		}
+	}
+
+	function requestAlbumsDataCompleted(e) {
+		var request = e.target;
+		// console.log(JSON.parse(request.responseText));
+		if (request.readyState === XMLHttpRequest.DONE) {
+			if (request.status === 200) {
+				// console.log(request.responseText);
+				var data = JSON.parse(request.responseText);
+				// console.log(data);
+				for (var key in data) {
+					var albumData = data[key];
+					var album = new Album(albumData.userId, albumData.id, albumData.title);
+					dataManager.addAlbumToBee(album);
+				}
+
+				requestPhotosData();
+			}
+			else {
+				console.log('Server Error');
+			}
+		}
+	}
+
+	function requestPhotosDataCompleted(e) {
+		var request = e.target;
+		// console.log(JSON.parse(request.responseText));
+		if (request.readyState === XMLHttpRequest.DONE) {
+			if (request.status === 200) {
+				// console.log(request.responseText);
+				var data = JSON.parse(request.responseText);
+				// console.log(data);
+				for (var key in data) {
+					var photoData = data[key];
+					var photo = new Photo(photoData.albumId, photoData.id, photoData.title, photoData.url, photoData.thumbnailUrl);
+					dataManager.addPhotoToAlbum(photo);
+				}
+
+				//HACK
+				dataManager.currentBee = dataManager.bees[7];
+				navManager.showBees();
+				navManager.showPosts();
+				navManager.showBeeAlbum();
 			}
 			else {
 				console.log('Server Error');

@@ -7,7 +7,10 @@
 */
 class Album {
 
-	constructor() {
-
-	}
+	constructor(userId, id, title) {
+        this.userId = userId;
+		this.id = id;
+		this.title = title;
+		this.photos = [];
+    }
 }
