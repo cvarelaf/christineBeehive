@@ -18,7 +18,5 @@ class PhotoComponent extends Component {
         this.id.innerHTML =  'PhotoId: ' + this.model.id;
         this.title.innerHTML =  'Title: ' + this.model.title;
         this.url.innerHTML =  'URL: ' + this.model.url;
-
-        //this.container.post = this.model;
     }
 }

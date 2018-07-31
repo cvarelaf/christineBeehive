@@ -55,4 +55,14 @@ class DataManager {
             });
         });
     }
+
+    addToDoToBee(todo) {
+        this.bees.forEach(function (bee) {
+            //function recibiendoBee(bee)
+            if (bee.id == todo.userId) {
+                bee.todos.push(todo);
+                return;
+            }
+        });
+    }
 }

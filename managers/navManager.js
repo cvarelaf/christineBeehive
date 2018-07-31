@@ -4,6 +4,7 @@ class NavManager {
         this.beesComponent = document.getElementById('beesComponent');
         this.postsComponent = document.getElementById('postsComponent');
         this.albumsComponent = document.getElementById('albumsComponent');
+        this.todosComponent = document.getElementById('todosComponent');
         //Get container for bee posts, album and todos
     }
 
@@ -27,5 +28,8 @@ class NavManager {
     }
 
     showBeeTodos() {
+        this.dataManager.currentBee.todos.forEach(todo => {
+            var todoComponent = new ToDoComponent(todo, this.todosComponent, this.dataManager);
+        });
     }
 }

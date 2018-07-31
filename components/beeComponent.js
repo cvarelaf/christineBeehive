@@ -38,13 +38,14 @@ class BeeComponent extends Component {
         this.city.innerHTML = this.model.address.city;
         this.posts.innerHTML = 'Posts:' + this.model.posts.length;
         this.photos.innerHTML = 'Albums: ' + this.model.albums.length;
-        this.todos.innerHTML = 'Todos: 0'; //this.model.todos.lenght;
+        this.todos.innerHTML = 'Todos: ' + this.model.todos.length;
         this.postsBtn.innerHTML = 'POSTS';
         this.albumBtn.innerHTML = 'ALBUM';
         this.todosBtn.innerHTML = 'TODOS';
 
         this.postsBtn.onclick = this.postsBtnClick.bind(this);
         this.albumBtn.onclick = this.albumBtnClick.bind(this);
+        this.todosBtn.onclick = this.todosBtnClick.bind(this);
 
         this.container.bee = this.model;
     }
@@ -54,6 +55,10 @@ class BeeComponent extends Component {
     }
 
     albumBtnClick(e) {
+        this.dataManager.setCurrentBee(this.model);
+    }
+
+    todosBtnClick(e) {
         this.dataManager.setCurrentBee(this.model);
     }
 }
