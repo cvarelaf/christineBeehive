@@ -6,15 +6,15 @@ class AlbumComponent extends Component {
         this.container.className = 'albumComponent';
 
         //Create Elements
-        this.userId = document.createElement('h3');
+        this.id = document.createElement('h3');
         this.title = document.createElement('p');
 
         //Add Elements
-        this.container.appendChild(this.userId);
+        this.container.appendChild(this.id);
         this.container.appendChild(this.title);
 
         //Fill Element
-        this.userId.innerHTML = 'UserId: ' + this.model.userId;
+        this.id.innerHTML = 'Album ID: ' + this.model.id;
         this.title.innerHTML = 'Title: ' + this.model.title;
 
         this.addPhotos();

@@ -16,7 +16,7 @@ class PostComponent extends Component {
         this.container.appendChild(this.body);
 
         //Fill Element
-        this.userId.innerHTML = 'UserId: ' + this.model.userId;
+        this.userId.innerHTML = 'PostId: ' + this.model.id;
         this.title.innerHTML = 'Title: ' + this.model.title;
         this.body.innerHTML = 'Body: ' + this.model.body;
 
