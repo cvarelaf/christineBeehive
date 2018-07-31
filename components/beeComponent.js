@@ -52,13 +52,16 @@ class BeeComponent extends Component {
 
     postsBtnClick(e) {
         this.dataManager.setCurrentBee(this.model);
+        (console.log('Chosen Bee is: ' + this.model.name + ' to display posts.'));
     }
 
     albumBtnClick(e) {
         this.dataManager.setCurrentBee(this.model);
+        (console.log('Chosen Bee is: ' + this.model.name + ' to display albums.'));
     }
 
     todosBtnClick(e) {
         this.dataManager.setCurrentBee(this.model);
+        (console.log('Chosen Bee is: ' + this.model.name + ' to display todos.'));
     }
 }
