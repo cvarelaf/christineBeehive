@@ -46,7 +46,7 @@ function init() {
 
 					//Hack
 					//dataManager.currentBee = dataManager.bees[0];
-					// console.log('Chosen Bee is: ' + dataManager.currentBee.name);
+					//console.log('Chosen Bee is: ' + dataManager.currentBee.name);
 				}
 
 				requestPostsData();

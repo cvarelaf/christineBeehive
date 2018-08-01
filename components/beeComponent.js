@@ -32,11 +32,11 @@ class BeeComponent extends Component {
 
         //Fill Element
         this.name.innerHTML = this.model.name;
-        this.username.innerHTML = this.model.username;
-        this.email.innerHTML = this.model.email;
-        this.phone.innerHTML = this.model.phone;
-        this.city.innerHTML = this.model.address.city;
-        this.posts.innerHTML = 'Posts:' + this.model.posts.length;
+        this.username.innerHTML = 'Username: ' + this.model.username;
+        this.email.innerHTML = 'Email: ' + this.model.email;
+        this.phone.innerHTML = 'Phone Number: ' + this.model.phone;
+        this.city.innerHTML = 'City: ' + this.model.address.city;
+        this.posts.innerHTML = 'Posts: ' + this.model.posts.length;
         this.photos.innerHTML = 'Albums: ' + this.model.albums.length;
         this.todos.innerHTML = 'Todos: ' + this.model.todos.length;
         this.postsBtn.innerHTML = 'POSTS';
@@ -51,14 +51,17 @@ class BeeComponent extends Component {
     }
 
 	postsBtnClick(e) {
-		this.dataManager.showBeePosts(this.model);
+        this.dataManager.showBeePosts(this.model);
+        console.log('Showing ' + this.model.name +'\'s Posts');
 	}
 
 	albumBtnClick(e) {
-		this.dataManager.showBeeAlbums(this.model);
+        this.dataManager.showBeeAlbums(this.model);
+        console.log('Showing ' + this.model.name +'\'s Albums');
 	}
 
 	todosBtnClick(e) {
-		this.dataManager.showBeeTodos(this.model);
+        this.dataManager.showBeeTodos(this.model);
+        console.log('Showing ' + this.model.name +'\'s ToDos');
 	}
 }
