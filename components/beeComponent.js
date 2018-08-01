@@ -50,18 +50,15 @@ class BeeComponent extends Component {
         this.container.bee = this.model;
     }
 
-    postsBtnClick(e) {
-        this.dataManager.setCurrentBee(this.model);
-        (console.log('Chosen Bee is: ' + this.model.name + ' to display posts.'));
-    }
+	postsBtnClick(e) {
+		this.dataManager.showBeePosts(this.model);
+	}
 
-    albumBtnClick(e) {
-        this.dataManager.setCurrentBee(this.model);
-        (console.log('Chosen Bee is: ' + this.model.name + ' to display albums.'));
-    }
+	albumBtnClick(e) {
+		this.dataManager.showBeeAlbums(this.model);
+	}
 
-    todosBtnClick(e) {
-        this.dataManager.setCurrentBee(this.model);
-        (console.log('Chosen Bee is: ' + this.model.name + ' to display todos.'));
-    }
+	todosBtnClick(e) {
+		this.dataManager.showBeeTodos(this.model);
+	}
 }

@@ -9,21 +9,23 @@
 	<script src="index.js"></script>
 	<script src="managers/dataManager.js"></script>
 	<script src="managers/navManager.js"></script>
-	<script src="models/bee.js"></script>
-	<script src="models/geo.js"></script>
-	<script src="models/address.js"></script>
-	<script src="models/post.js"></script>
-	<script src="models/comment.js"></script>
-	<script src="models/album.js"></script>
-	<script src="models/photo.js"></script>
-	<script src="models/todo.js"></script>
 	<script src="components/component.js"></script>
-	<script src="components/beeComponent.js"></script>
-	<script src="components/postComponent.js"></script>
-	<script src="components/commentComponent.js"></script>
+	<script src="models/address.js"></script>
+	<script src="models/album.js"></script>
+	<script src="models/bee.js"></script>
+	<script src="models/comment.js"></script>
+	<script src="models/geo.js"></script>
+	<script src="models/photo.js"></script>
+	<script src="models/post.js"></script>
+	<script src="models/todo.js"></script>
 	<script src="components/albumComponent.js"></script>
+	<script src="components/beeComponent.js"></script>
+	<script src="components/commentComponent.js"></script>
+	<script src="components/newPostComponent.js"></script>
 	<script src="components/photoComponent.js"></script>
+	<script src="components/postComponent.js"></script>
 	<script src="components/todoComponent.js"></script>
+
 	<link rel="stylesheet" href="css/appComponent.css">
 	<link rel="stylesheet" href="css/beeActivityComponent.css">
 	<link rel="stylesheet" href="css/beesComponent.css">
@@ -35,12 +37,16 @@
 </head>
 
 <body>
-	<div class="appComponent">
+	<div id="appComponent" class="appComponent">
 		<div id="beesComponent" class="beesComponent"></div>
-		<div class="beeActivityComponent">
-			<div id="postsComponent" class="postsComponent"></div>
-			<div id="albumsComponent" class="albumsComponent"></div>
-			<div id="todosComponent" class="todosComponent"></div>
+		<div id="postsComponent" class="postsComponent"></div>
+		<div id="albumsComponent" class="albumsComponent"></div>
+		<div id="todosComponent" class="todosComponent"></div>
+		<div id="newPostComponent" class="newPostComponent">
+			<input type="text" id="newPostComponentTitle">
+			<input type="text" id="newPostComponentBody">
+			<button id="newPostComponentOKBtn">OK</button>
+			<button id="newPostComponentCancelBtn">Cancel</button>
 		</div>
 	</div>
 </body>

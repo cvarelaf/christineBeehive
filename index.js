@@ -11,6 +11,7 @@ function init() {
 	//Declare variables
 	var dataManager = new DataManager();
 	var navManager = new NavManager(dataManager);
+	dataManager.navManager = navManager;
 
 	//Program Logic
 	requestUsersData();
@@ -19,41 +20,6 @@ function init() {
 		var request = new XMLHttpRequest();
 		request.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
 		request.onreadystatechange = requestUsersDataCompleted;
-		request.send();
-	}
-
-	function requestPostsData() {
-		var request = new XMLHttpRequest();
-		request.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
-		request.onreadystatechange = requestPostsDataCompleted;
-		request.send();
-	}
-
-	function requestCommentsData() {
-		var request = new XMLHttpRequest();
-		request.open('GET', 'https://jsonplaceholder.typicode.com/comments', true);
-		request.onreadystatechange = requestCommentsDataCompleted;
-		request.send();
-	}
-
-	function requestAlbumsData() {
-		var request = new XMLHttpRequest();
-		request.open('GET', 'https://jsonplaceholder.typicode.com/albums', true);
-		request.onreadystatechange = requestAlbumsDataCompleted;
-		request.send();
-	}
-
-	function requestPhotosData() {
-		var request = new XMLHttpRequest();
-		request.open('GET', 'https://jsonplaceholder.typicode.com/photos', true);
-		request.onreadystatechange = requestPhotosDataCompleted;
-		request.send();
-	}
-
-	function requestToDosData() {
-		var request = new XMLHttpRequest();
-		request.open('GET', 'https://jsonplaceholder.typicode.com/todos', true);
-		request.onreadystatechange = requestToDosDataCompleted;
 		request.send();
 	}
 
@@ -79,8 +45,8 @@ function init() {
 					dataManager.bees.push(bee);
 
 					//Hack
-					dataManager.currentBee = dataManager.bees[0];
-					console.log('Chosen Bee is: ' + dataManager.currentBee.name);
+					// dataManager.currentBee = dataManager.bees[0];
+					// console.log('Chosen Bee is: ' + dataManager.currentBee.name);
 				}
 
 				requestPostsData();
@@ -91,6 +57,13 @@ function init() {
 				console.log('Server Error');
 			}
 		}
+	}
+
+	function requestPostsData() {
+		var request = new XMLHttpRequest();
+		request.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
+		request.onreadystatechange = requestPostsDataCompleted;
+		request.send();
 	}
 
 	function requestPostsDataCompleted(e) {
@@ -114,6 +87,13 @@ function init() {
 		}
 	}
 
+	function requestCommentsData() {
+		var request = new XMLHttpRequest();
+		request.open('GET', 'https://jsonplaceholder.typicode.com/comments', true);
+		request.onreadystatechange = requestCommentsDataCompleted;
+		request.send();
+	}
+
 	function requestCommentsDataCompleted(e) {
 		var request = e.target;
 		// console.log(JSON.parse(request.responseText));
@@ -128,12 +108,18 @@ function init() {
 					dataManager.addCommentToPost(comment);
 				}
 				navManager.showBees();
-				navManager.showPosts();
 			}
 			else {
 				console.log('Server Error');
 			}
 		}
+	}
+
+	function requestAlbumsData() {
+		var request = new XMLHttpRequest();
+		request.open('GET', 'https://jsonplaceholder.typicode.com/albums', true);
+		request.onreadystatechange = requestAlbumsDataCompleted;
+		request.send();
 	}
 
 	function requestAlbumsDataCompleted(e) {
@@ -158,6 +144,13 @@ function init() {
 		}
 	}
 
+	function requestPhotosData() {
+		var request = new XMLHttpRequest();
+		request.open('GET', 'https://jsonplaceholder.typicode.com/photos', true);
+		request.onreadystatechange = requestPhotosDataCompleted;
+		request.send();
+	}
+
 	function requestPhotosDataCompleted(e) {
 		var request = e.target;
 		// console.log(JSON.parse(request.responseText));
@@ -175,8 +168,15 @@ function init() {
 			else {
 				console.log('Server Error');
 			}
-			navManager.showBeeAlbum();
+			navManager.showBees();
 		}
+	}
+
+	function requestToDosData() {
+		var request = new XMLHttpRequest();
+		request.open('GET', 'https://jsonplaceholder.typicode.com/todos', true);
+		request.onreadystatechange = requestToDosDataCompleted;
+		request.send();
 	}
 
 	function requestToDosDataCompleted(e) {
@@ -196,7 +196,7 @@ function init() {
 			else {
 				console.log('Server Error');
 			}
-			navManager.showBeeTodos();
+			navManager.showBees();
 		}
 	}
 }

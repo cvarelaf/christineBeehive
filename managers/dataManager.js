@@ -3,11 +3,8 @@ class DataManager {
     constructor() {
 
         this.bees = [];
-        this.posts = [];
-        this.comments = [];
-        this.albums = [];
-        this.photos = [];
-        this.currentBee = null;
+		this.currentBee = null;
+		this.navManager = null;
     }
 
     setCurrentBee(bee) {
@@ -65,4 +62,19 @@ class DataManager {
             }
         });
     }
+
+	showBeePosts(bee) {
+        this.currentBee = bee;
+        this.navManager.showBeePosts();
+	}
+
+	showBeeAlbums(bee) {
+		this.currentBee = bee;
+		this.navManager.showBeeAlbums();
+	}
+
+	showBeeTodos(bee) {
+		this.currentBee = bee;
+		this.navManager.showBeeTodos();
+	}
 }
