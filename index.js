@@ -45,7 +45,7 @@ function init() {
 					dataManager.bees.push(bee);
 
 					//Hack
-					dataManager.currentBee = dataManager.bees[0];
+					//dataManager.currentBee = dataManager.bees[0];
 					// console.log('Chosen Bee is: ' + dataManager.currentBee.name);
 				}
 
