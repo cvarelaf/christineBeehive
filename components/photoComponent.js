@@ -17,6 +17,6 @@ class PhotoComponent extends Component {
         //Fill Element
         this.id.innerHTML =  'PhotoId: ' + this.model.id;
         this.title.innerHTML =  'Title: ' + this.model.title;
-        this.url.innerHTML =  "<img src=\"" + this.model.url + "http://placehold.it/100/771796\" width=\"100px\" height=\"100px\">";
+        this.url.innerHTML =  "<img src=\"" + this.model.url + " width=\"100px\" height=\"100px\">";
     }
 }
