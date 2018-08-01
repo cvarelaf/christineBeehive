@@ -45,7 +45,7 @@ function init() {
 					dataManager.bees.push(bee);
 
 					//Hack
-					// dataManager.currentBee = dataManager.bees[0];
+					dataManager.currentBee = dataManager.bees[0];
 					// console.log('Chosen Bee is: ' + dataManager.currentBee.name);
 				}
 
@@ -107,7 +107,7 @@ function init() {
 					var comment = new Comment(commentData.postId, commentData.id, commentData.name, commentData.email, commentData.body);
 					dataManager.addCommentToPost(comment);
 				}
-				navManager.showBees();
+				//navManager.showBees();
 			}
 			else {
 				console.log('Server Error');
@@ -168,7 +168,7 @@ function init() {
 			else {
 				console.log('Server Error');
 			}
-			navManager.showBees();
+			//navManager.showBees();
 		}
 	}
 
