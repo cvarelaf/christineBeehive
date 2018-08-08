@@ -7,8 +7,6 @@
 
 window.addEventListener('load', init, false);
 
-//HOLA
-
 function init() {
 	//Declare variables
 	var dataManager = new DataManager();
