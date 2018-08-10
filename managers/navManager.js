@@ -24,8 +24,8 @@ class NavManager {
 	}
 
 	showBeePosts() {
-		this.postsComponent.container.hidden = true;
-		this.todosComponent.container.hidden = false;
+		this.postsComponent.container.hidden = false;
+		this.todosComponent.container.hidden = true;
 		this.albumsComponent.hidden = true;
 		this.todosComponent.hidden = true;
 		this.newPostComponent.hide();
