@@ -11,14 +11,14 @@ class PostsComponent extends Component {
 
 		this.addPostBtn.innerHTML = 'ADD POST';
 
-		this.container.appendChild(this.addPostBtn);
 		this.container.appendChild(this.postsContainer);
+		this.container.appendChild(this.addPostBtn);
 
 		this.addPostBtn.onclick = this.addPostBtnClick.bind(this);
 	}
 
 	showBeePosts() {
-		this.postsContainer.innerHTML = '';
+		this.postsContainer.innerHTML = 'POSTs';
 		this.postsList = [];
 
 		this.dataManager.currentBee.posts.forEach(post => {
