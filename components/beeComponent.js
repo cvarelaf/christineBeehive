@@ -32,10 +32,10 @@ class BeeComponent extends Component {
 
 		//Fill Element
 		this.title.innerText = this.model.name;
-		this.username.innerText = this.model.username;
-		this.email.innerText = this.model.email;
-		this.phone.innerText = this.model.phone;
-		this.city.innerText = this.model.address.city + ', ' + this.model.address.street + ', ' + this.model.address.zipcode;
+		this.username.innerText = 'Username: ' + this.model.username;
+		this.email.innerText = 'E-mail: ' + this.model.email;
+		this.phone.innerText = 'Phone Number: ' + this.model.phone;
+		this.city.innerText = 'Address: ' + this.model.address.city + ', ' + this.model.address.street + ', ' + this.model.address.zipcode;
 		this.posts.innerText = 'Posts:' + this.model.posts.length;
 		this.photos.innerText = 'Photos:0';// + this.model.album.photos.length;
 		this.todos.innerText = 'Todos:' + this.model.todos.length;

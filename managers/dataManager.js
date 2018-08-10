@@ -5,7 +5,7 @@ class DataManager {
         this.bees = [];
 		this.currentBee = null;
         this.navManager = null;
-        this.user = new Bee(0, 'Christine Varela', 'cvarelaf', 'cvarelaf@ucenfotec.ac.cr', '506 83438862', new Address('Heredia', new Geo(0.0, 0.0), 'Heredia', '1000', '1000/1000'));
+        this.user = new Bee(0, 'Christine Varela', 'cvarelaf', 'cvarelaf@ucenfotec.ac.cr', '506 83438862', new Address('Heredia', new Geo(0.0, 0.0), 'Heredia', '1000', '91792-91793'));
 		this.bees.push(this.user);
     }
 

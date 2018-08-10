@@ -11,14 +11,14 @@ class ToDosComponent extends Component {
 
 		this.addToDoBtn.innerHTML = 'ADD TODO';
 
-		this.container.appendChild(this.addToDoBtn);
 		this.container.appendChild(this.todosContainer);
+		this.container.appendChild(this.addToDoBtn);
 
 		this.addToDoBtn.onclick = this.addToDoBtnClick.bind(this);
 	}
 
 	showBeeTodos() {
-		this.todosContainer.innerHTML = '';
+		this.todosContainer.innerHTML = 'TODOs';
 		this.todosList = [];
 
 		this.dataManager.currentBee.todos.forEach(todo => {

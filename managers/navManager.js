@@ -10,6 +10,7 @@ class NavManager {
 		this.newPostComponent = new NewPostComponent(null, this.appComponent, this.dataManager);
 		this.newCommentComponent = new NewCommentComponent(null, this.appComponent, this.dataManager);
 		this.newToDoComponent = new NewToDoComponent(null, this.appComponent, this.dataManager);
+		this.todosComponent.hide();
 		this.newPostComponent.hide();
 		this.newCommentComponent.hide();
 		this.newToDoComponent.hide();
@@ -26,6 +27,7 @@ class NavManager {
 	showBeePosts() {
 		this.postsComponent.container.hidden = false;
 		this.todosComponent.container.hidden = true;
+		this.postsComponent.hidden = false;
 		this.albumsComponent.hidden = true;
 		this.todosComponent.hidden = true;
 		this.newPostComponent.hide();
@@ -34,10 +36,11 @@ class NavManager {
 	}
 
 	showBeeAlbums() {
+		this.postsComponent.container.hidden = true;
+		this.todosComponent.container.hidden = true;
+        this.albumsComponent.hidden = false;
 		this.postsComponent.hide();
 		this.todosComponent.hide();
-        this.albumsComponent.hidden = false;
-        this.todosComponent.hidden = true;
 		this.newPostComponent.hide();
 		this.newToDoComponent.hide();
         this.albumsComponent.innerHTML = 'ALBUMs';
@@ -52,7 +55,6 @@ class NavManager {
 		this.albumsComponent.hidden = true;
 		this.todosComponent.hidden = true;
 		this.newPostComponent.hide();
-		this.newToDoComponent.hide();
 		this.todosComponent.showBeeTodos();
 	}
 

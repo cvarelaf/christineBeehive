@@ -45,7 +45,7 @@ function init() {
 					dataManager.bees.push(bee);
 
 					//Hack
-					dataManager.currentBee = dataManager.bees[1];
+					dataManager.currentBee = dataManager.bees[0];
 					console.log('Currently Showing ' + dataManager.currentBee.name +'\'s Posts');
 				}
 
