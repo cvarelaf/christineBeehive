@@ -18,7 +18,7 @@ class ToDoComponent extends Component {
         //Fill Element
         this.id.innerHTML = 'ToDo ID: ' + this.model.id;
         this.title.innerHTML = 'Title: ' + this.model.title;
-        this.completed.innerHTML = 'Status: ' + this.model.completed;
+        this.completed.innerHTML = 'Completed: ' + this.model.completed;
     }
 
     addToDoBtnClick() {

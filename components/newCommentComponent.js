@@ -17,6 +17,8 @@ class NewCommentComponent extends Component {
 
 		this.container.className = 'newCommentComponent';
 
+		this.title.placeholder = 'Comment Title';
+		this.body.placeholder = 'Body';
 		this.okBtn.innerHTML = 'OK';
 		this.cancelBtn.innerHTML = 'CANCEL';
 
@@ -29,7 +31,7 @@ class NewCommentComponent extends Component {
 		//Add new comment
 		e.preventDefault();
 		this.commentCounter++;
-		var comment = new Comment(this.commentCounter, this.model.id, this.title.value, this.dataManager.user.email, this.body.value);
+		var comment = new Comment(this.commentCounter, this.dataManager.user.id, this.title.value, this.dataManager.user.email, this.body.value);
 		this.model.comments.push(comment);
 
 		this.hide();

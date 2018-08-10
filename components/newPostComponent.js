@@ -17,7 +17,8 @@ class NewPostComponent extends Component {
 
 		this.container.className = 'newPostComponent';
 
-
+		this.title.placeholder = 'Post Title';
+		this.body.placeholder = 'Body';
 		this.okBtn.innerHTML = 'OK';
 		this.cancelBtn.innerHTML = 'CANCEL';
 
