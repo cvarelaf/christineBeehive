@@ -6,34 +6,40 @@ class NavManager {
 		this.appComponent = document.getElementById('appComponent');
         this.postsComponent = new PostsComponent(null, this.appComponent, this.dataManager);
 		this.albumsComponent = document.getElementById('albumComponent');
-		this.todosComponent = document.getElementById('todosComponent');
-		this.newPostComponent = new NewPostComponent(null, this.appComponent, dataManager);
+		this.todosComponent = new ToDosComponent(null, this.appComponent, this.dataManager);
+		this.newPostComponent = new NewPostComponent(null, this.appComponent, this.dataManager);
 		this.newCommentComponent = new NewCommentComponent(null, this.appComponent, this.dataManager);
+		this.newToDoComponent = new NewToDoComponent(null, this.appComponent, this.dataManager);
 		this.newPostComponent.hide();
 		this.newCommentComponent.hide();
+		this.newToDoComponent.hide();
 
 	}
 
 	showBees() {
 		this.dataManager.bees.forEach(bee => {
-			var beeComponent = new BeeComponent(bee, this.beesComponent, this.dataManager);
+			var beeCompoment = new BeeComponent(bee, this.beesComponent, this.dataManager);
 		});
 		this.showBeePosts();
 	}
 
 	showBeePosts() {
-		this.postsComponent.container.hidden = false;
+		this.postsComponent.container.hidden = true;
+		this.todosComponent.container.hidden = false;
 		this.albumsComponent.hidden = true;
 		this.todosComponent.hidden = true;
 		this.newPostComponent.hide();
+		this.newToDoComponent.hide();
 		this.postsComponent.showBeePosts();
 	}
 
 	showBeeAlbums() {
-        this.postsComponent.hide();
+		this.postsComponent.hide();
+		this.todosComponent.hide();
         this.albumsComponent.hidden = false;
         this.todosComponent.hidden = true;
-        this.newPostComponent.hide();
+		this.newPostComponent.hide();
+		this.newToDoComponent.hide();
         this.albumsComponent.innerHTML = 'ALBUMs';
         this.dataManager.currentBee.albums.forEach(album => {
             var albumComponent = new AlbumComponent(album, this.albumsComponent, this.dataManager);
@@ -41,14 +47,13 @@ class NavManager {
 	}
 
 	showBeeTodos() {
-        this.postsComponent.hide();
-        this.albumsComponent.hidden = true;
-        this.todosComponent.hidden = false;
-        this.newPostComponent.hide();
-        this.todosComponent.innerHTML = 'TODOs';
-        this.dataManager.currentBee.todos.forEach(todo => {
-            var todoComponent = new ToDoComponent(todo, this.todosComponent, this.dataManager);
-        });
+		this.postsComponent.container.hidden = true;
+		this.todosComponent.container.hidden = false;
+		this.albumsComponent.hidden = true;
+		this.todosComponent.hidden = true;
+		this.newPostComponent.hide();
+		this.newToDoComponent.hide();
+		this.todosComponent.showBeeTodos();
 	}
 
 	showNewPostComponent() {
@@ -64,6 +69,12 @@ class NavManager {
 		this.newPostComponent.hide();
 		this.newCommentComponent.model = post;
 		this.newCommentComponent.show();
+	}
+
+	showNewToDoComponent() {
+		this.albumsComponent.hidden = true;
+		this.todosComponent.hidden = true;
+		this.newToDoComponent.show();
 	}
 }
 

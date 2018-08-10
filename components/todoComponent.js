@@ -20,4 +20,8 @@ class ToDoComponent extends Component {
         this.title.innerHTML = 'Title: ' + this.model.title;
         this.completed.innerHTML = 'Status: ' + this.model.completed;
     }
+
+    addToDoBtnClick() {
+		console.log('Show ToDo UI-Form');
+	}
 }

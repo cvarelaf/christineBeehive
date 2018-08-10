@@ -33,12 +33,6 @@ class PostsComponent extends Component {
 		} else {
 			this.addPostBtn.hidden = false;
 		}
-
-		this.changePostComponentColor(9, 'blueColor');
-	}
-
-	changePostComponentColor(index, className) {
-		this.postsList[index].container.classList.add(className);
 	}
 
 	addPostBtnClick(e) {
